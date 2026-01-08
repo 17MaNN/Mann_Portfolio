@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 27% 95%;
+    --foreground: 0 0% 0%;
+
+    --card: 36 27% 95%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 36 27% 95%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 36 15% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 36 20% 92%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 15% 88%;
+    --input: 36 15% 88%;
+    --ring: 0 0% 0%;
+
+    --radius: 0.5rem;
+
+    --code-bg: 0 0% 18%;
+    --code-foreground: 0 0% 100%;
+
+    /* Typography */
+    --font-display: 'Epilogue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Spacing */
+    --section-padding: clamp(4rem, 10vw, 8rem);
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 36 27% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 36 27% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 36 27% 95%;
+
+    --primary: 36 27% 95%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 36 27% 95%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 36 27% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 36 27% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Typography Classes */
+  .text-hero {
+    @apply font-display font-extrabold tracking-tight;
+    font-size: clamp(3.5rem, 10vw, 7.5rem);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+
+  .text-hero-large {
+    @apply font-display;
+    font-weight: 800;
+    font-size: clamp(4rem, 12vw, 120px);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .text-section-heading {
+    @apply font-display font-bold uppercase tracking-wide;
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    letter-spacing: 0.02em;
+  }
+
+  .text-subheading {
+    @apply font-display font-semibold;
+    font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .text-body {
+    @apply font-body font-normal leading-relaxed;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+  }
+
+  .text-small {
+    @apply font-body font-medium uppercase tracking-widest;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
+  }
+
+  .text-tech {
+    @apply font-mono;
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
+  }
+
+  .text-nav {
+    @apply font-body font-medium uppercase tracking-wider;
+    font-size: 0.875rem;
+  }
+
+  /* Pill Containers */
+  .pill {
+    @apply inline-flex items-center px-4 py-2 rounded-full border border-border bg-secondary text-foreground transition-all duration-300;
+  }
+
+  .pill:hover {
+    @apply bg-primary text-primary-foreground scale-105;
+  }
+
+  .pill-organic {
+    @apply inline-flex items-center px-6 py-3 rounded-[50px] border border-border bg-secondary/50;
+    border-radius: 50% 40% 60% 45% / 55% 50% 45% 50%;
+  }
+
+  /* Decorative Elements */
+  .sparkle {
+    @apply inline-block text-foreground/60;
+  }
+
+  .code-bracket {
+    @apply font-mono text-muted-foreground;
+  }
+
+  /* Cards */
+  .project-card {
+    @apply relative bg-secondary rounded-2xl p-8 border border-border transition-all duration-500;
+  }
+
+  .project-card:hover {
+    @apply shadow-2xl -translate-y-2;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Marquee */
+  .marquee-container {
+    @apply overflow-hidden whitespace-nowrap;
+  }
+
+  .marquee-content {
+    @apply inline-flex gap-8 animate-marquee;
+  }
+
+  /* Organic Shapes */
+  .oval-container {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    @apply border border-border px-8 py-4 inline-block;
+  }
+
+  /* Hero Large Organic Oval */
+  .hero-oval-large {
+    @apply inline-flex items-center border-2 border-foreground bg-background;
+    padding: 24px 40px;
+    border-radius: 60% 50% 55% 45% / 55% 60% 45% 50%;
+  }
+
+  /* Hero Organic Pill */
+  .hero-pill-organic {
+    @apply inline-flex items-center border border-border bg-background/80;
+    padding: 12px 24px;
+    border-radius: 50% 45% 55% 40% / 50% 55% 45% 50%;
+  }
+
+  /* Wavy Border */
+  .wavy-top {
+    position: relative;
+  }
+
+  .wavy-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath d='M0,60 C300,0 600,60 900,30 C1050,15 1150,45 1200,30 L1200,0 L0,0 Z' fill='%23F5F3EF'/%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Stagger Delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-800 { animation-delay: 0.8s; }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-foreground/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-foreground/40;
+  }
+}
