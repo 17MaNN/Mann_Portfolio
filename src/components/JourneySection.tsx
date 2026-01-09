@@ -18,6 +18,22 @@ const JourneySection = () => {
       details: "Backend development & system design",
       icon: "💼",
     },
+    {
+      type: "Experience",
+      title: "ML Engineer Intern",
+      organization: "Unified Mentor",
+      period: "May — Aug 2025",
+      details: "Industry-Based Machine Learning Projects",
+      icon: "💼",
+    },
+    {
+      type: "Experience",
+      title: "Freelancer",
+      organization: "Freelancer.com & Upwork",
+      period: "Feb 2024 — Present",
+      details: "Visual Design & Web Developer",
+      icon: "💼",
+    },
   ];
 
   return (
