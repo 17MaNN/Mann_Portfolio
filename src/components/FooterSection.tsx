@@ -118,7 +118,7 @@ const FooterSection = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <p className="font-body text-sm text-primary-foreground/50">
-              © 2025 Man Mohan Sharma • Crafted with code & creativity
+              © 2026 Man Mohan Sharma • Crafted with code & creativity
             </p>
           </motion.div>
         </div>
