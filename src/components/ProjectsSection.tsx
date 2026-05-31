@@ -14,6 +14,22 @@ interface Project {
 const ProjectsSection = () => {
   const projects: Project[] = [
     {
+      title: "Medical AI Assistant",
+      tagline: "LLM • RAG SYSTEM",
+      description:
+        "Retrieval-Augmented Generation pipeline for clinical document retrieval using vector databases and LLM-based contextual reasoning.",
+      tech: ["Python", "LangChain", "Vector DB", "LLM", "FastAPI"],
+      github: "https://github.com/yourusername/medical-ai-assistant",
+    },
+    {
+      title: "Rainbow Prediction",
+      tagline: "ML RESEARCH • ATMOSPHERIC AI",
+      description:
+        "Physics-informed ML system trained on 1.49M+ NASA POWER meteorological records to predict atmospheric and rainbow formation patterns.",
+      tech: ["Python", "Scikit-learn", "XGBoost", "NASA POWER", "Pandas"],
+      github: "https://github.com/yourusername/rainbow-prediction",
+    },
+    {
       title: "Hakkasan Mumbai",
       tagline: "RESTAURANT • WEB DESIGN",
       description:
