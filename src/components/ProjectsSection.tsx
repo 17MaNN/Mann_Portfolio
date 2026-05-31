@@ -19,7 +19,7 @@ const ProjectsSection = () => {
       description:
         "Retrieval-Augmented Generation pipeline for clinical document retrieval using vector databases and LLM-based contextual reasoning.",
       tech: ["Python", "LangChain", "Vector DB", "LLM", "FastAPI"],
-      github: "https://github.com/yourusername/medical-ai-assistant",
+      github: "https://github.com/17MaNN/MedSearchAI",
     },
     {
       title: "Rainbow Prediction",
