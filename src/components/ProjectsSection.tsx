@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       description:
         "Physics-informed ML system trained on 1.49M+ NASA POWER meteorological records to predict atmospheric and rainbow formation patterns.",
       tech: ["Python", "Scikit-learn", "XGBoost", "NASA POWER", "Pandas"],
-      github: "https://github.com/yourusername/rainbow-prediction",
+      github: "https://github.com/17MaNN/Rainbow..",
     },
     {
       title: "Hakkasan Mumbai",
