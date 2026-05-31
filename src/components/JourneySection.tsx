@@ -8,7 +8,7 @@ const JourneySection = () => {
       organization: "Uttaranchal University",
       period: "2023 — 2027",
       details: "CGPA: 9.1/10",
-      icon: "🎓",
+      icon: "🕮",
     },
     {
       type: "Experience",
@@ -16,7 +16,7 @@ const JourneySection = () => {
       organization: "IIT Hyderabad Partnership",
       period: "Jun — Jul 2024",
       details: "Backend development & system design",
-      icon: "💼",
+      icon: "⌨",
     },
     {
       type: "Experience",
@@ -24,7 +24,7 @@ const JourneySection = () => {
       organization: "Unified Mentor",
       period: "May — Aug 2025",
       details: "Industry-Based Machine Learning Projects",
-      icon: "💼",
+      icon: "⌨",
     },
     {
       type: "Experience",
@@ -32,7 +32,7 @@ const JourneySection = () => {
       organization: "Freelancer.com & Upwork",
       period: "Feb 2024 — Present",
       details: "Visual Design & Web Developer",
-      icon: "💼",
+      icon: "⌨",
     },
   ];
 
