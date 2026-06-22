@@ -104,7 +104,7 @@ const ProjectsSection = () => {
           <div className="flex items-end gap-6">
             <h2 className="text-section-heading">Featured Work</h2>
             <span className="hidden md:block font-mono text-muted-foreground/40 text-2xl mb-2">
-              {"{ 05 }"}
+              {"{ 08 }"}
             </span>
           </div>
         </motion.div>
