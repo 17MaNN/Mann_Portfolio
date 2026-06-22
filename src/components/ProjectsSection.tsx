@@ -14,6 +14,14 @@ interface Project {
 const ProjectsSection = () => {
   const projects: Project[] = [
     {
+      title: "FIFA 2026 Predictor",
+      tagline: "AI • MACHINE LEARNING",
+      description:
+         "AI-powered FIFA World Cup 2026 prediction platform using XGBoost, Random Forest, ELO ratings, EA FC ratings, and Monte Carlo simulations to forecast match outcomes and tournament winners.",
+      tech: ["Python", "XGBoost", "Random Forest", "Machine Learning", "Monte Carlo", "React"],
+      github: "https://github.com/17MaNN/FIFA-2026-Predictor",
+    },
+    {
       title: "Medical AI Assistant",
       tagline: "LLM • RAG SYSTEM",
       description:
