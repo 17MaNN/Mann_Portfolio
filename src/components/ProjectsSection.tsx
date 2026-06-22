@@ -20,6 +20,8 @@ const ProjectsSection = () => {
          "AI-powered FIFA World Cup 2026 prediction platform using XGBoost, Random Forest, ELO ratings, EA FC ratings, and Monte Carlo simulations to forecast match outcomes and tournament winners.",
       tech: ["Python", "XGBoost", "Logistic Regression", "Machine Learning", "React"],
       github: "https://github.com/17MaNN/WC26",
+      website: "https://predictorfifa2026.vercel.app/",
+      isWebsite: true,
     },
     {
       title: "Medical AI Assistant",
