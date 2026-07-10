@@ -1,73 +1,59 @@
 import { Github, Linkedin, Mail, Phone, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { FOOTER_BG_DARK, FOOTER_BG_LIGHT } from "@/lib/themeImages";
+import Marquee from "./Marquee";
 
 const FooterSection = () => {
+  const { resolvedTheme } = useTheme();
+  const bgImage = resolvedTheme === "light" ? FOOTER_BG_LIGHT : FOOTER_BG_DARK;
+
   const contacts = [
-    { icon: Github, label: "GitHub", href: "https://github.com/17MaNN", number: "①" },
-    { icon: Code2, label: "LeetCode", href: "https://leetcode.com/u/17MaNN/", number: "②" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/man-mohan-sharma/", number: "③" },
-    { icon: Mail, label: "Email", href: "mailto:manmohansharma1117@gmail.com", number: "④" },
-    { icon: Phone, label: "Phone", href: "tel:+919259412501", number: "⑤" },
+    { icon: Github, label: "GitHub", href: "https://github.com/17MaNN" },
+    { icon: Code2, label: "LeetCode", href: "https://leetcode.com/u/17MaNN/" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/man-mohan-sharma/" },
+    { icon: Mail, label: "Email", href: "mailto:manmohansharma1117@gmail.com" },
+    { icon: Phone, label: "Phone", href: "tel:+919259412501" },
   ];
 
   return (
-    <footer id="contact" className="relative pt-0">
-      {/* Wavy Top Border */}
-      <div className="w-full overflow-hidden">
-        <svg
-          viewBox="0 0 1200 60"
-          className="w-full h-12 md:h-16"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,60 C200,20 400,50 600,30 C800,10 1000,40 1200,20 L1200,60 L0,60 Z"
-            fill="hsl(var(--foreground))"
+    <footer id="contact" className="relative border-t border-border">
+      <div className="bg-foreground text-primary-foreground py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={bgImage}
+            alt=""
+            className="w-full h-full object-cover opacity-[0.4] mix-blend-luminosity"
           />
-        </svg>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="bg-foreground text-primary-foreground py-20 md:py-28">
-        <div className="container mx-auto px-6 lg:px-12">
-          {/* CTA Marquee */}
-          <motion.div 
+        </div>
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <motion.div
             className="mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Marquee Banner */}
-            <a 
+            <a
               href="mailto:manmohansharma1117@gmail.com"
-              className="block border-t border-b border-primary-foreground/20 overflow-hidden hover:bg-primary-foreground/5 transition-colors cursor-pointer"
-              style={{ height: '120px' }}
+              className="block border-t border-b border-primary-foreground/20 overflow-hidden hover:bg-primary-foreground/5 transition-colors cursor-pointer h-[100px] md:h-[120px]"
             >
-              <div className="marquee-container h-full flex items-center">
-                <div className="marquee-content">
-                  {[...Array(6)].map((_, i) => (
-                    <span
-                      key={i}
-                      className="font-display font-bold whitespace-nowrap flex items-center gap-6"
-                      style={{ fontSize: '32px' }}
-                    >
-                      Get In Touch 
-                      <span className="text-primary-foreground/40">✦</span>
-                      Let's Build Together 
-                      <span className="text-primary-foreground/40">✦</span>
-                      Hire Me 
-                      <span className="text-primary-foreground/40">✦</span>
-                      Say Hello 
-                      <span className="text-primary-foreground/40 mr-6">✦</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <Marquee speed={80} className="h-full flex items-center">
+                <span className="font-display font-bold whitespace-nowrap flex items-center gap-6 text-2xl md:text-[32px] pr-6">
+                  Get In Touch
+                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                  Let's Build Together
+                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                  Hire Me
+                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                  Say Hello
+                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                </span>
+              </Marquee>
             </a>
           </motion.div>
 
-          {/* Contact Links */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-6 md:gap-10 mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -80,15 +66,16 @@ const FooterSection = () => {
                 href={contact.href}
                 target={contact.label === "Email" || contact.label === "Phone" ? undefined : "_blank"}
                 rel={contact.label === "Email" || contact.label === "Phone" ? undefined : "noopener noreferrer"}
-                className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors group"
-                initial={{ opacity: 0, y: 20 }}
+                className="link-underline text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.4, delay: 0.08 * index }}
               >
-                <span className="font-display text-lg">{contact.number}</span>
-                <contact.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="index-label text-primary-foreground/40">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <contact.icon className="w-4 h-4" />
                 <span className="font-body font-medium text-sm uppercase tracking-wider hidden sm:inline">
                   {contact.label}
                 </span>
@@ -96,14 +83,14 @@ const FooterSection = () => {
             ))}
           </motion.div>
 
-          {/* Decorative Separator */}
-          <motion.div 
-            className="flex items-center justify-center gap-4 mb-10"
+          <motion.div
+            className="text-center border-t border-primary-foreground/10 pt-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
+<<<<<<< HEAD
             <span className="w-12 h-px bg-primary-foreground/20" />
             <span className="text-xl text-primary-foreground/40">✦</span>
             <span className="w-12 h-px bg-primary-foreground/20" />
@@ -119,8 +106,25 @@ const FooterSection = () => {
           >
             <p className="font-body text-sm text-primary-foreground/50">
               © 2026 Man Mohan Sharma • Crafted with code & creativity
+=======
+            <p className="font-mono text-xs text-primary-foreground/40 uppercase tracking-widest">
+              © 2026 Man Mohan Sharma — Crafted with code
+>>>>>>> 45e590e (updating to v2)
             </p>
           </motion.div>
+        </div>
+
+        {/* Giant faded background wordmark */}
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-8 md:-bottom-16 left-0 right-0 flex justify-center z-0"
+        >
+          <span
+            className="bg-wordmark whitespace-nowrap"
+            style={{ color: "hsl(var(--primary-foreground) / 0.36)" }}
+          >
+            MaNN.
+          </span>
         </div>
       </div>
     </footer>

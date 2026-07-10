@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Epilogue', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
         body: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        logo: ['Space Grotesk', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -55,6 +56,10 @@ export default {
         code: {
           DEFAULT: "hsl(var(--code-bg))",
           foreground: "hsl(var(--code-foreground))",
+        },
+        signal: {
+          DEFAULT: "hsl(var(--signal))",
+          foreground: "hsl(var(--signal-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

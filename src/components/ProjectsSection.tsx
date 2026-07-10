@@ -1,5 +1,6 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 interface Project {
   title: string;
@@ -9,11 +10,13 @@ interface Project {
   github?: string;
   website?: string;
   isWebsite?: boolean;
+  image?: string;
 }
 
 const ProjectsSection = () => {
   const projects: Project[] = [
     {
+<<<<<<< HEAD
       title: "FIFA 2026 Predictor",
       tagline: "AI • MACHINE LEARNING",
       description:
@@ -42,15 +45,44 @@ const ProjectsSection = () => {
     {
       title: "Hakkasan Mumbai",
       tagline: "RESTAURANT • WEB DESIGN",
+=======
+      title: "WC26 — Match Prediction System",
+      tagline: "XGBOOST · FASTAPI · REACT/VITE",
+>>>>>>> 45e590e (updating to v2)
       description:
-        "Premium restaurant website showcasing luxury dining experience with elegant UI and seamless reservation system.",
+        "End-to-end FIFA World Cup 2026 prediction system: XGBoost modeling, a FastAPI backend, and a React/Vite frontend, deployed on Render and Vercel with live football-data.org integration.",
+      tech: ["XGBoost", "FastAPI", "React", "Vite", "Render", "Vercel"],
+      github: "https://github.com/17MaNN/WC26",
+    },
+    {
+      title: "Rainbow Prediction Framework",
+      tagline: "ATMOSPHERIC ML · RESEARCH · arXiv (in progress)",
+      description:
+        "1.49M NASA POWER atmospheric records, 26 physics-derived features, and an XGBoost/RF/LightGBM ensemble — co-built with Laveena Armarkar, targeting an arXiv physics.ao-ph submission.",
+      tech: ["XGBoost", "LightGBM", "Random Forest", "Python", "NASA POWER"],
+      github: "https://github.com/17MaNN",
+    },
+    {
+      title: "Medical AI Assistant",
+      tagline: "RAG · MACHINE LEARNING",
+      description:
+        "A Retrieval-Augmented Generation (RAG) application that answers medical queries using a domain-specific knowledge base, combining semantic search with locally hosted LLMs to deliver accurate and context-aware healthcare information.",
+      tech: ["Python","Ollama","LangChain","RAG","Vector Database","Embeddings","React","Tailwind CSS"],
+      website: "https://medsearchai.onrender.com/",
+      isWebsite: true,
+    },
+    {
+      title: "Hakkasan Mumbai",
+      tagline: "RESTAURANT · WEB DESIGN",
+      description:
+        "Premium restaurant website showcasing a luxury dining experience with an elegant UI and seamless reservation system.",
       tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
       website: "https://hakkasan-mumbai.vercel.app/",
       isWebsite: true,
     },
     {
       title: "Skin Cancer Detection",
-      tagline: "DEEP LEARNING • MEDICAL AI",
+      tagline: "DEEP LEARNING · MEDICAL AI",
       description:
         "CNN-based classification model achieving 98%+ accuracy in detecting malignant skin lesions. Deployed with Flask for real-time clinical analysis.",
       tech: ["TensorFlow", "CNN", "Flask", "Python"],
@@ -58,15 +90,15 @@ const ProjectsSection = () => {
     },
     {
       title: "Tweet Sentiment Analysis",
-      tagline: "NLP • TEXT CLASSIFICATION",
+      tagline: "NLP · TEXT CLASSIFICATION",
       description:
-        "Advanced NLP classifier using TF-IDF vectorization for real-time sentiment detection. Currently optimizing towards 95%+ accuracy benchmark.",
+        "NLP classifier using TF-IDF vectorization for real-time sentiment detection, optimizing towards a 95%+ accuracy benchmark.",
       tech: ["NLP", "Scikit-learn", "TF-IDF", "Python"],
       github: "https://github.com/17MaNN/Tweet_sentiment_",
     },
     {
       title: "Phishing Detector",
-      tagline: "ML SECURITY • NLP",
+      tagline: "ML SECURITY · NLP",
       description:
         "Machine learning security model leveraging NLP techniques to identify and flag phishing attempts with high precision.",
       tech: ["Machine Learning", "NLP", "Python", "Security"],
@@ -74,9 +106,9 @@ const ProjectsSection = () => {
     },
     {
       title: "AgriConnect",
-      tagline: "FULL STACK • AGRICULTURE TECH",
+      tagline: "FULL STACK · AGRICULTURE TECH",
       description:
-        "Comprehensive Java Swing application with MySQL backend, connecting farmers with markets and resources for better agricultural outcomes.",
+        "Java Swing application with a MySQL backend, connecting farmers with markets and resources for better agricultural outcomes.",
       tech: ["Java", "Swing", "MySQL", "JDBC"],
       github: "https://github.com/17MaNN/AgriConnect",
     },
@@ -84,12 +116,8 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-24 md:py-32 relative bg-background">
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 text-5xl text-muted-foreground/20 animate-float hidden lg:block">
-        ✦
-      </div>
-
       <div className="container mx-auto px-6 lg:px-12">
+<<<<<<< HEAD
         {/* Section Heading */}
         <motion.div 
           className="mb-16"
@@ -106,84 +134,89 @@ const ProjectsSection = () => {
             <span className="hidden md:block font-mono text-muted-foreground/40 text-2xl mb-2">
               {"{ 08 }"}
             </span>
+=======
+        <ScrollReveal className="mb-16 flex items-end justify-between border-b border-border pb-8">
+          <div>
+            <span className="index-label mb-4 block">03 / SELECTED WORK</span>
+            <h2 className="text-section-heading">Projects</h2>
+>>>>>>> 45e590e (updating to v2)
           </div>
-        </motion.div>
+          <span className="hidden md:block font-mono text-muted-foreground/40 text-lg">
+            {String(projects.length).padStart(2, "0")} total
+          </span>
+        </ScrollReveal>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div>
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
-              className="project-card group"
-              initial={{ opacity: 0, y: 50 }}
+              className="project-row group relative"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              whileHover={{ y: -8 }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.06, 0.3), ease: [0.16, 1, 0.3, 1] }}
             >
-              {/* Project Number */}
-              <span className="absolute top-6 right-6 font-mono text-sm text-muted-foreground">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
-              {/* Tagline */}
-              <span className="text-small text-muted-foreground mb-3 block">
-                {project.tagline}
-              </span>
-
-              {/* Title */}
-              <h3 className="font-display font-semibold text-2xl md:text-[1.75rem] mb-4">
-                {project.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-body text-muted-foreground mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="font-mono px-3 py-1.5 rounded-full text-muted-foreground transition-colors hover:text-foreground bg-muted"
-                    style={{ fontSize: '13px' }}
+              <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start px-2 md:px-4">
+                <div className="md:col-span-1 flex md:block">
+                  {/* Unique hover "pop" — index badge inverts to a solid signal-colored
+                      circle with a spring bounce instead of an image reveal. */}
+                  <motion.span
+                    className="relative inline-flex items-center justify-center w-9 h-9 rounded-full index-label group-hover:text-signal-foreground transition-colors duration-200"
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
-                    {t}
-                  </span>
-                ))}
-              </div>
+                    <motion.span
+                      className="absolute inset-0 rounded-full bg-signal scale-0 group-hover:scale-100"
+                      transition={{ type: "spring", stiffness: 350, damping: 18 }}
+                    />
+                    <span className="relative z-10">{String(index + 1).padStart(2, "0")}</span>
+                  </motion.span>
+                </div>
 
-              {/* Links */}
-              <div className="flex items-center gap-4 pt-4 border-t border-border">
-                {project.isWebsite ? (
-                  <a
-                    href={project.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium hover:text-muted-foreground transition-colors group/link"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Visit Website</span>
-                    <ExternalLink className="w-3 h-3 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />
-                  </a>
-                ) : (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium hover:text-muted-foreground transition-colors group/link"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>View Code</span>
-                    <ExternalLink className="w-3 h-3 opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all" />
-                  </a>
-                )}
-              </div>
+                <div className="md:col-span-5">
+                  <span className="text-small mb-2 block">{project.tagline}</span>
+                  <ScrollReveal as="h3" intensity="subtle" className="font-display font-bold text-2xl md:text-3xl leading-tight">
+                    {project.title}
+                  </ScrollReveal>
+                </div>
 
-              {/* Hover Decoration */}
-              <div className="absolute bottom-4 right-4 text-2xl opacity-0 group-hover:opacity-20 transition-opacity">
-                ✦
+                <div className="md:col-span-4">
+                  <p className="text-body text-muted-foreground text-sm md:text-base">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {project.tech.map((t) => (
+                      <span key={t} className="tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="md:col-span-2 flex md:justify-end">
+                  {project.isWebsite ? (
+                    <a
+                      href={project.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-underline text-sm font-medium"
+                    >
+                      Visit site
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  ) : (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-underline text-sm font-medium"
+                    >
+                      <Github className="w-4 h-4" />
+                      View code
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.article>
           ))}

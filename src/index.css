@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600&display=swap');
+/* ^ TODO(font): "Playfair Display" is the closest Google Font match to the
+   serif in your reference image ("Still Frame"). If you have the exact
+   font file/name, swap it in here and in the --font-display var below. */
 
 @tailwind base;
 @tailwind components;
@@ -6,73 +9,86 @@
 
 @layer base {
   :root {
-    --background: 36 27% 95%;
-    --foreground: 0 0% 0%;
+    /* DARK THEME — Red & Black */
+    --background: 0 0% 4%;
+    --foreground: 0 10% 95%;
 
-    --card: 36 27% 95%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 25% 7%;
+    --card-foreground: 0 10% 95%;
 
-    --popover: 36 27% 95%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 25% 7%;
+    --popover-foreground: 0 10% 95%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 10% 95%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 30% 9%;
+    --secondary-foreground: 0 10% 95%;
 
-    --muted: 36 15% 90%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 20% 11%;
+    --muted-foreground: 0 8% 60%;
 
-    --accent: 36 20% 92%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 0 25% 12%;
+    --accent-foreground: 0 10% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 36 15% 88%;
-    --input: 36 15% 88%;
-    --ring: 0 0% 0%;
+    --border: 0 30% 16%;
+    --input: 0 30% 16%;
+    --ring: 0 85% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.125rem;
 
-    --code-bg: 0 0% 18%;
-    --code-foreground: 0 0% 100%;
+    --code-bg: 0 25% 11%;
+    --code-foreground: 0 10% 95%;
+
+    /* Signal accent — the "Red" in Red & Black */
+    --signal: 0 85% 55%;
+    --signal-foreground: 0 0% 100%;
 
     /* Typography */
-    --font-display: 'Epilogue', sans-serif;
+    --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
     /* Spacing */
-    --section-padding: clamp(4rem, 10vw, 8rem);
+    --section-padding: clamp(5rem, 12vw, 10rem);
   }
 
-  .dark {
-    --background: 0 0% 8%;
-    --foreground: 36 27% 95%;
+  .light {
+    /* LIGHT THEME — Blue & White */
+    --background: 0 0% 100%;
+    --foreground: 220 45% 10%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 36 27% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 45% 10%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 36 27% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 45% 10%;
 
-    --primary: 36 27% 95%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 220 45% 10%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 36 27% 95%;
+    --secondary: 220 30% 96%;
+    --secondary-foreground: 220 45% 10%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 15% 42%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 36 27% 95%;
+    --accent: 220 25% 94%;
+    --accent-foreground: 220 45% 10%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 36 27% 95%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 217 91% 55%;
+
+    --code-bg: 220 20% 95%;
+    --code-foreground: 220 45% 10%;
+
+    /* Signal accent — the "Blue" in Blue & White */
+    --signal: 217 91% 55%;
+    --signal-foreground: 0 0% 100%;
   }
 }
 
@@ -83,6 +99,12 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  @media (pointer: fine) {
+    body, a, button {
+      cursor: none;
+    }
   }
 
   body {
@@ -112,31 +134,35 @@
     font-family: var(--font-mono);
   }
 
-  /* Typography Classes */
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
   .text-hero {
-    @apply font-display font-extrabold tracking-tight;
+    @apply font-display font-bold;
     font-size: clamp(3.5rem, 10vw, 7.5rem);
-    letter-spacing: -0.02em;
-    line-height: 0.9;
+    letter-spacing: -0.04em;
+    line-height: 0.86;
   }
 
   .text-hero-large {
-    @apply font-display;
-    font-weight: 800;
-    font-size: clamp(4rem, 12vw, 120px);
-    letter-spacing: -0.02em;
-    line-height: 1;
+    @apply font-display font-bold;
+    font-size: clamp(3.5rem, 11vw, 148px);
+    letter-spacing: -0.04em;
+    line-height: 0.88;
   }
 
   .text-section-heading {
-    @apply font-display font-bold uppercase tracking-wide;
-    font-size: clamp(2.5rem, 6vw, 3.75rem);
-    letter-spacing: 0.02em;
+    @apply font-display font-bold;
+    font-size: clamp(2.75rem, 7vw, 4.5rem);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
   }
 
   .text-subheading {
     @apply font-display font-semibold;
     font-size: clamp(1.25rem, 3vw, 2rem);
+    letter-spacing: -0.01em;
   }
 
   .text-body {
@@ -145,8 +171,8 @@
   }
 
   .text-small {
-    @apply font-body font-medium uppercase tracking-widest;
-    font-size: clamp(0.75rem, 1vw, 0.875rem);
+    @apply font-mono font-normal uppercase tracking-widest text-muted-foreground;
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
   }
 
   .text-tech {
@@ -156,43 +182,86 @@
 
   .text-nav {
     @apply font-body font-medium uppercase tracking-wider;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
   }
 
-  /* Pill Containers */
-  .pill {
-    @apply inline-flex items-center px-4 py-2 rounded-full border border-border bg-secondary text-foreground transition-all duration-300;
+  .index-label {
+    @apply font-mono text-muted-foreground/60 tabular-nums;
+    font-size: 0.8rem;
   }
 
-  .pill:hover {
-    @apply bg-primary text-primary-foreground scale-105;
+  .hairline {
+    @apply border-t border-border;
   }
 
-  .pill-organic {
-    @apply inline-flex items-center px-6 py-3 rounded-[50px] border border-border bg-secondary/50;
-    border-radius: 50% 40% 60% 45% / 55% 50% 45% 50%;
+  .tag {
+    @apply inline-flex items-center px-3 py-1 border border-border font-mono text-xs text-muted-foreground transition-colors duration-300;
   }
 
-  /* Decorative Elements */
-  .sparkle {
-    @apply inline-block text-foreground/60;
+  .tag:hover {
+    @apply border-foreground/40 text-foreground;
   }
 
-  .code-bracket {
-    @apply font-mono text-muted-foreground;
+  /* Rounded-pill variant — used for Tech Stack (no sharp rectangles there) */
+  .tag-pill {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full border border-border font-mono text-xs text-muted-foreground transition-all duration-300;
   }
 
-  /* Cards */
-  .project-card {
-    @apply relative bg-secondary rounded-2xl p-8 border border-border transition-all duration-500;
+  .tag-pill:hover {
+    @apply border-signal/60 text-foreground bg-signal/10 -translate-y-0.5;
   }
 
-  .project-card:hover {
-    @apply shadow-2xl -translate-y-2;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  /* Giant faded background wordmark — e.g. About section signature type */
+  .bg-wordmark {
+    @apply font-display font-bold select-none pointer-events-none;
+    font-size: clamp(6rem, 22vw, 20rem);
+    line-height: 0.8;
+    letter-spacing: -0.03em;
+    color: hsl(var(--foreground) / 0.05);
   }
 
-  /* Marquee */
+  /* Same treatment, but for sections with an inverted background (e.g. the
+     Footer's bg-foreground/text-primary-foreground combo) — colored off
+     the background token instead so it stays visible rather than blending in. */
+  .bg-wordmark-inverse {
+    @apply font-display font-bold select-none pointer-events-none;
+    font-size: clamp(6rem, 22vw, 20rem);
+    line-height: 0.8;
+    letter-spacing: -0.03em;
+    color: hsl(var(--background) / 0.08);
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-2;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transition: right 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .link-underline:hover::after {
+    right: 0;
+  }
+
+  .project-row {
+    @apply relative border-b border-border py-10 md:py-14 transition-colors duration-500;
+  }
+
+  .project-row:hover {
+    @apply bg-secondary/40;
+  }
+
+  .text-signal {
+    color: hsl(var(--signal));
+  }
+
   .marquee-container {
     @apply overflow-hidden whitespace-nowrap;
   }
@@ -200,131 +269,87 @@
   .marquee-content {
     @apply inline-flex gap-8 animate-marquee;
   }
-
-  /* Organic Shapes */
-  .oval-container {
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    @apply border border-border px-8 py-4 inline-block;
-  }
-
-  /* Hero Large Organic Oval */
-  .hero-oval-large {
-    @apply inline-flex items-center border-2 border-foreground bg-background;
-    padding: 24px 40px;
-    border-radius: 60% 50% 55% 45% / 55% 60% 45% 50%;
-  }
-
-  /* Hero Organic Pill */
-  .hero-pill-organic {
-    @apply inline-flex items-center border border-border bg-background/80;
-    padding: 12px 24px;
-    border-radius: 50% 45% 55% 40% / 50% 55% 45% 50%;
-  }
-
-  /* Wavy Border */
-  .wavy-top {
-    position: relative;
-  }
-
-  .wavy-top::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60'%3E%3Cpath d='M0,60 C300,0 600,60 900,30 C1050,15 1150,45 1200,30 L1200,0 L0,0 Z' fill='%23F5F3EF'/%3E%3C/svg%3E") no-repeat;
-    background-size: cover;
-  }
 }
 
 @layer utilities {
-  /* Animations */
-  @keyframes marquee {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
+  @keyframes heroReveal {
+    0% { opacity: 0; transform: translateY(28px); filter: blur(12px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+
+  @keyframes heroFadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes heroZoom {
+    0% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+  }
+
+  .hero-anim {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-reveal {
+    animation-name: heroReveal;
+    animation-duration: 1.1s;
+  }
+
+  .hero-fade {
+    animation-name: heroFadeUp;
+    animation-duration: 1s;
+  }
+
+  .hero-zoom {
+    animation: heroZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-anim, .hero-zoom {
+      animation: none;
+      opacity: 1;
     }
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(5deg);
-    }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   @keyframes fade-up {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(32px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes scale-in {
-    0% {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
+    0% { opacity: 0; transform: scale(0.96); }
+    100% { opacity: 1; transform: scale(1); }
   }
 
   @keyframes slide-in-left {
-    0% {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
-    }
-    50% {
-      box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.05);
-    }
+    0% { opacity: 0; transform: translateX(-32px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: marquee 32s linear infinite;
   }
 
   .animate-fade-up {
-    animation: fade-up 0.8s ease-out forwards;
+    animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-scale-in {
-    animation: scale-in 0.6s ease-out forwards;
+    animation: scale-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-slide-in-left {
-    animation: slide-in-left 0.6s ease-out forwards;
+    animation: slide-in-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
-  /* Stagger Delays */
   .delay-100 { animation-delay: 0.1s; }
   .delay-200 { animation-delay: 0.2s; }
   .delay-300 { animation-delay: 0.3s; }
@@ -334,7 +359,6 @@
   .delay-700 { animation-delay: 0.7s; }
   .delay-800 { animation-delay: 0.8s; }
 
-  /* Hover Effects */
   .hover-lift {
     @apply transition-transform duration-300;
   }
@@ -343,12 +367,11 @@
     @apply -translate-y-1;
   }
 
-  /* Selection */
   ::selection {
-    @apply bg-foreground text-background;
+    background: hsl(var(--signal));
+    color: hsl(var(--signal-foreground));
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -358,7 +381,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-foreground/20 rounded-full;
+    @apply bg-foreground/20;
   }
 
   ::-webkit-scrollbar-thumb:hover {
