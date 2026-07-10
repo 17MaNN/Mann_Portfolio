@@ -90,7 +90,6 @@ const FooterSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-<<<<<<< HEAD
             <span className="w-12 h-px bg-primary-foreground/20" />
             <span className="text-xl text-primary-foreground/40">✦</span>
             <span className="w-12 h-px bg-primary-foreground/20" />
@@ -106,10 +105,6 @@ const FooterSection = () => {
           >
             <p className="font-body text-sm text-primary-foreground/50">
               © 2026 Man Mohan Sharma • Crafted with code & creativity
-=======
-            <p className="font-mono text-xs text-primary-foreground/40 uppercase tracking-widest">
-              © 2026 Man Mohan Sharma — Crafted with code
->>>>>>> 45e590e (updating to v2)
             </p>
           </motion.div>
         </div>
