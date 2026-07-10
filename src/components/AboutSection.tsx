@@ -60,15 +60,15 @@ const AboutSection = () => {
 
             <div className="space-y-6 pt-2">
               <p className="text-body text-muted-foreground leading-relaxed">
-               My name is Man Mohan Sharma. I got bitten by machine learning somewhere around my first 'Hello World,' and for the last three years, I've been the one turning messy data into systems that actually work. And things are going... pretty well, honestly.
+               My name is Man Mohan Sharma. I got bitten by machine learning somewhere around my first 'Hello World,' and for the last three years, I've been the one turning messy data into systems that actually work. And things are going... pretty well, honestly..
               </p>
 
               <p className="text-body text-muted-foreground leading-relaxed">
-                I don't do average, and I definitely don't do sloppy—every model I ship is built to survive the real world, not just a demo. Clean pipelines, reproducible results, code that scales instead of just running once and quitting.
+                I don't do average, and I definitely don't do sloppy, every model I ship is built to survive the real world, not just a demo. Clean pipelines, reproducible results, code that scales instead of just running once and quitting..
               </p>
 
               <p className="text-body text-muted-foreground leading-relaxed">
-                When I'm not building, I'm chasing whatever's on the research frontier or contributing to open-source—because the best ideas shouldn't just sit in a paper nobody reads. Call it obsession. Call it the origin story. I'm just getting started.
+                When I'm not building, I'm chasing whatever's on the research frontier or contributing to open-source, because the best ideas shouldn't just sit in a paper nobody reads. Call it obsession. Call it the origin story. I'm just getting started..
               </p>
             </div>
           </motion.div>

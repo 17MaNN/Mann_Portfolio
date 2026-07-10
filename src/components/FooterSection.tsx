@@ -39,15 +39,15 @@ const FooterSection = () => {
               className="block border-t border-b border-primary-foreground/20 overflow-hidden hover:bg-primary-foreground/5 transition-colors cursor-pointer h-[100px] md:h-[120px]"
             >
               <Marquee speed={80} className="h-full flex items-center">
-                <span className="font-display font-bold whitespace-nowrap flex items-center gap-6 text-2xl md:text-[32px] pr-6">
+                <span className="font-logo font-bold whitespace-nowrap flex items-center gap-6 text-2xl md:text-[32px] pr-6">
                   Get In Touch
-                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                  <span className="text-primary-foreground/30 font-logo text-xl">✦</span>
                   Let's Build Together
-                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
-                  Hire Me
-                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                  <span className="text-primary-foreground/30 font-logo text-xl">✦</span>
+                  Collaborate on Projects
+                  <span className="text-primary-foreground/30 font-logo text-xl">✦</span>
                   Say Hello
-                  <span className="text-primary-foreground/30 font-mono text-xl">🟐</span>
+                  <span className="text-primary-foreground/30 font-logo text-xl">✦</span>
                 </span>
               </Marquee>
             </a>

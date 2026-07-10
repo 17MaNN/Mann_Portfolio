@@ -35,24 +35,23 @@ const LoadingScreen = ({ assets, onComplete }: LoadingScreenProps) => {
         const video = document.createElement("video");
         video.preload = "auto";
         video.oncanplaythrough = bump;
-        video.onerror = bump; // never block the site on a failed asset
+        video.onerror = bump; 
         video.src = src;
       } else {
         const img = new Image();
         img.onload = bump;
-        img.onerror = bump; // never block the site on a failed asset
+        img.onerror = bump; 
         img.src = src;
       }
     });
 
-    // Safety timeout — never trap the user on the loader
     const safety = setTimeout(() => {
       setProgress(100);
       setDone(true);
     }, 6000);
 
     return () => clearTimeout(safety);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
 
   useEffect(() => {

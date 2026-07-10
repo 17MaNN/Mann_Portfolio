@@ -25,14 +25,6 @@ const ProjectsSection = () => {
       image: "/images/project-wc26.webp",
     },
     {
-      title: "Medical AI Assistant",
-      tagline: "LLM • RAG SYSTEM",
-      description:
-        "Retrieval-Augmented Generation pipeline for clinical document retrieval using vector databases and LLM-based contextual reasoning.",
-      tech: ["Python", "LangChain", "Vector DB", "LLM", "FastAPI"],
-      github: "https://github.com/17MaNN/MedSearchAI",
-    },
-    {
       title: "Rainbow Prediction Framework",
       tagline: "ATMOSPHERIC ML · RESEARCH · arXiv (in progress)",
       description:
@@ -40,6 +32,14 @@ const ProjectsSection = () => {
       tech: ["XGBoost", "LightGBM", "Random Forest", "Python", "NASA POWER"],
       github: "https://github.com/17MaNN",
       image: "/images/project-rainbow.webp",
+    },
+    {
+      title: "Medical AI Assistant",
+      tagline: "LLM • RAG SYSTEM",
+      description:
+        "Retrieval-Augmented Generation pipeline for clinical document retrieval using vector databases and LLM-based contextual reasoning.",
+      tech: ["Python", "LangChain", "Vector DB", "LLM", "FastAPI"],
+      github: "https://github.com/17MaNN/MedSearchAI",
     },
     {
       title: "Hakkasan Mumbai",
@@ -109,8 +109,7 @@ const ProjectsSection = () => {
             >
               <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start px-2 md:px-4">
                 <div className="md:col-span-1 flex md:block">
-                  {/* Unique hover "pop" — index badge inverts to a solid signal-colored
-                      circle with a spring bounce instead of an image reveal. */}
+              
                   <motion.span
                     className="relative inline-flex items-center justify-center w-9 h-9 rounded-full index-label group-hover:text-signal-foreground transition-colors duration-200"
                     whileHover={{ scale: 1.15 }}

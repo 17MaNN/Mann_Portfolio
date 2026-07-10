@@ -12,16 +12,10 @@ const HeroSection = () => {
   const isLight = resolvedTheme === "light";
   const cursorPos = useSmoothCursor();
 
-  // TODO(video): the actual file paths live in src/lib/themeImages.ts —
-  // HERO_VIDEO_DARK (red sky) / HERO_VIDEO_LIGHT (water, currently a
-  // placeholder pointing at the same file). Update them there, not here.
   const videoSrc = isLight ? HERO_VIDEO_LIGHT : HERO_VIDEO_DARK;
   const videoPoster = isLight ? HERO_VIDEO_LIGHT_POSTER : HERO_VIDEO_DARK_POSTER;
   const revealImage = isLight ? HERO_REVEAL_LIGHT : HERO_REVEAL_DARK;
 
-  // Theme-aware text + scrim so overlay copy stays legible no matter which
-  // video (light or dark) is behind it — dark mode gets white text on a
-  // black scrim, light mode gets near-black text on a white scrim.
   const textColor = isLight ? "text-neutral-900" : "text-white";
   const textColorMuted = isLight ? "text-neutral-900/75" : "text-white/80";
   const scrimTop = isLight
@@ -42,8 +36,7 @@ const HeroSection = () => {
         className="relative w-full overflow-hidden h-screen bg-black"
         style={{ height: "100dvh" }}
       >
-        {/* Base layer — now video instead of a static image. Swaps
-            automatically with theme (see TODO above / themeImages.ts). */}
+
         <video
           key={videoSrc}
           className="absolute inset-0 w-full h-full object-cover z-10"
@@ -55,7 +48,6 @@ const HeroSection = () => {
           playsInline
         />
 
-        {/* Cursor-following spotlight reveal */}
         <RevealLayer
           key={revealImage}
           image={revealImage}
@@ -63,7 +55,6 @@ const HeroSection = () => {
           cursorY={cursorPos.y}
         />
 
-        {/* Legibility scrims */}
         <div className={`absolute top-0 inset-x-0 h-[45%] z-40 pointer-events-none ${scrimTop}`} />
         <div className={`absolute bottom-0 inset-x-0 h-[50%] z-40 pointer-events-none ${scrimBottom}`} />
 
@@ -92,7 +83,7 @@ const HeroSection = () => {
         >
           <p className={`text-sm leading-relaxed transition-colors duration-300 ${textColorMuted}`}>
             Every model, every API, every deployed line of code is one layer
-            in a system built to run in production — not just in a notebook.
+            in a system built to run in production, not just in a notebook.
           </p>
         </div>
 
@@ -102,9 +93,7 @@ const HeroSection = () => {
           style={{ animationDelay: "0.85s" }}
         >
           <p className={`text-xs sm:text-sm leading-relaxed transition-colors duration-300 ${textColorMuted}`}>
-            Software developer & ML engineer building intelligent systems —
-            from 1.49M-record data pipelines to live prediction APIs shipping
-            in production.
+            Software developer & ML engineer building intelligent systems, from million-record data pipelines to prediction APIs running live in production.
           </p>
           <button
             onClick={scrollToProjects}
@@ -115,18 +104,24 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* Marquee banner — hover to see it decelerate to a stop */}
+      {/* Marquee banner */}
       <div className="border-t border-b border-border bg-foreground text-primary-foreground relative z-10 h-[72px] md:h-[100px] flex items-center">
         <Marquee speed={70} className="w-full">
-          <span className="font-display font-bold whitespace-nowrap flex items-center gap-6 text-lg md:text-[22px] pr-6">
+          <span className="font-logo font-bold whitespace-nowrap flex items-center gap-6 text-lg md:text-[22px] pr-6">
             Building intelligent systems with clean code
-            <span className="text-primary-foreground/30 font-mono">🟐</span>
-            Creating real-world solutions
-            <span className="text-primary-foreground/30 font-mono">🟐</span>
-            Machine learning, applied
-            <span className="text-primary-foreground/30 font-mono">🟐</span>
-            Full stack, end to end
-            <span className="text-primary-foreground/30 font-mono">🟐</span>
+            <span className="text-primary-foreground/30 font-logo">✦</span>
+            Machine learning
+            <span className="text-primary-foreground/30 font-logo">✦</span>
+            Clean architecture
+            <span className="text-primary-foreground/30 font-logo">✦</span>
+            Production ready
+            <span className="text-primary-foreground/30 font-logo">✦</span>
+            Always building
+            <span className="text-primary-foreground/30 font-logo">✦</span>
+            Research driven
+            <span className="text-primary-foreground/30 font-logo">✦</span>
+            Full stack development
+            <span className="text-primary-foreground/30 font-logo">✦</span>
           </span>
         </Marquee>
       </div>

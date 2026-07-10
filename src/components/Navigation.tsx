@@ -15,23 +15,15 @@ const Navigation = () => {
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
   ];
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  // Theme-tied colors instead of hardcoded white: dark mode -> a dark glass
-  // pill with light text, light mode -> a light glass pill with dark text.
-  // This is what was missing before — hardcoded white washed out on light
-  // backgrounds/pills. Using --foreground/--background tokens means it
-  // always flips correctly with the theme, no manual isLight branching needed.
   return (
     <nav className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between p-4 sm:p-5">
-      {/* Logo — TODO(font): using JetBrains Mono (already loaded sitewide
-          for tags/numbers) for a distinct, brutalist wordmark. Swap the
-          className below if you want a different typeface instead. */}
+     
       <a
         href="#home"
           className="font-logo font-bold text-2xl tracking-tight"
