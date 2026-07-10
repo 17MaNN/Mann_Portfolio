@@ -22,7 +22,8 @@ const ProjectsSection = () => {
         "End-to-end FIFA World Cup 2026 prediction system: XGBoost modeling, a FastAPI backend, and a React/Vite frontend, deployed on Render and Vercel with live football-data.org integration.",
       tech: ["XGBoost", "FastAPI", "React", "Vite", "Render", "Vercel"],
       github: "https://github.com/17MaNN/WC26",
-      image: "/images/project-wc26.webp",
+      website: "https://predictorfifa2026.vercel.app/",
+      isWebsite: true,
     },
     {
       title: "Rainbow Prediction Framework",
@@ -31,7 +32,6 @@ const ProjectsSection = () => {
         "1.49M NASA POWER atmospheric records, 26 physics-derived features, and an XGBoost/RF/LightGBM ensemble — co-built with Laveena Armarkar, targeting an arXiv physics.ao-ph submission.",
       tech: ["XGBoost", "LightGBM", "Random Forest", "Python", "NASA POWER"],
       github: "https://github.com/17MaNN",
-      image: "/images/project-rainbow.webp",
     },
     {
       title: "Medical AI Assistant",
@@ -40,6 +40,8 @@ const ProjectsSection = () => {
         "Retrieval-Augmented Generation pipeline for clinical document retrieval using vector databases and LLM-based contextual reasoning.",
       tech: ["Python", "LangChain", "Vector DB", "LLM", "FastAPI"],
       github: "https://github.com/17MaNN/MedSearchAI",
+      website: "http://medsearchai.onrender.com/",
+      isWebsite: true,
     },
     {
       title: "Hakkasan Mumbai",
