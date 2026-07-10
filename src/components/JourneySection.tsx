@@ -13,48 +13,20 @@ const JourneySection = () => {
       organization: "Uttaranchal University",
       period: "2023 — 2027",
       details: "CGPA: 9.1/10",
-<<<<<<< HEAD
-      icon: "🕮",
-=======
->>>>>>> 45e590e (updating to v2)
     },
     {
       type: "Experience",
-      title: "Java Developer Intern",
+      title: "ML Engineering Intern",
+      organization: "Unified Mentor",
+      period: "2025",
+      details: "Built production ML pipelines",
+    },
+    {
+      type: "Experience",
+      title: "Java Programming Intern",
       organization: "IIT Hyderabad Partnership",
       period: "Jun — Jul 2024",
       details: "Backend development & system design",
-<<<<<<< HEAD
-      icon: "⌨",
-=======
->>>>>>> 45e590e (updating to v2)
-    },
-    {
-      type: "Experience",
-      title: "ML Engineer Intern",
-      organization: "Unified Mentor",
-<<<<<<< HEAD
-      period: "May — Aug 2025",
-      details: "Industry-Based Machine Learning Projects",
-      icon: "⌨",
-=======
-      period: "2025",
-      details: "Built production ML pipelines",
->>>>>>> 45e590e (updating to v2)
-    },
-    {
-      type: "Experience",
-      title: "Freelancer",
-<<<<<<< HEAD
-      organization: "Freelancer.com & Upwork",
-      period: "Feb 2024 — Present",
-      details: "Visual Design & Web Developer",
-      icon: "⌨",
-=======
-      organization: "Remote",
-      period: "Feb 2024 — Present",
-      details: "Web development & system design",
->>>>>>> 45e590e (updating to v2)
     },
   ];
 
@@ -64,7 +36,7 @@ const JourneySection = () => {
         <img
           src={bgImage}
           alt=""
-          className="w-full h-full object-cover opacity-[0.1]"
+          className="w-full h-full object-cover opacity-[0.06]"
         />
       </div>
 

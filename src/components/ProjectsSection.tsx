@@ -16,15 +16,13 @@ interface Project {
 const ProjectsSection = () => {
   const projects: Project[] = [
     {
-<<<<<<< HEAD
-      title: "FIFA 2026 Predictor",
-      tagline: "AI • MACHINE LEARNING",
+      title: "WC26 — Match Prediction System",
+      tagline: "XGBOOST · FASTAPI · REACT/VITE",
       description:
-         "AI-powered FIFA World Cup 2026 prediction platform using XGBoost, Random Forest, ELO ratings, EA FC ratings, and Monte Carlo simulations to forecast match outcomes and tournament winners.",
-      tech: ["Python", "XGBoost", "Logistic Regression", "Machine Learning", "React"],
+        "End-to-end FIFA World Cup 2026 prediction system: XGBoost modeling, a FastAPI backend, and a React/Vite frontend, deployed on Render and Vercel with live football-data.org integration.",
+      tech: ["XGBoost", "FastAPI", "React", "Vite", "Render", "Vercel"],
       github: "https://github.com/17MaNN/WC26",
-      website: "https://predictorfifa2026.vercel.app/",
-      isWebsite: true,
+      image: "/images/project-wc26.webp",
     },
     {
       title: "Medical AI Assistant",
@@ -35,41 +33,13 @@ const ProjectsSection = () => {
       github: "https://github.com/17MaNN/MedSearchAI",
     },
     {
-      title: "Rainbow Prediction",
-      tagline: "ML RESEARCH • ATMOSPHERIC AI",
-      description:
-        "Physics-informed ML system trained on 1.49M+ NASA POWER meteorological records to predict atmospheric and rainbow formation patterns.",
-      tech: ["Python", "Scikit-learn", "XGBoost", "NASA POWER", "Pandas"],
-      github: "https://github.com/17MaNN/Rainbow..",
-    },
-    {
-      title: "Hakkasan Mumbai",
-      tagline: "RESTAURANT • WEB DESIGN",
-=======
-      title: "WC26 — Match Prediction System",
-      tagline: "XGBOOST · FASTAPI · REACT/VITE",
->>>>>>> 45e590e (updating to v2)
-      description:
-        "End-to-end FIFA World Cup 2026 prediction system: XGBoost modeling, a FastAPI backend, and a React/Vite frontend, deployed on Render and Vercel with live football-data.org integration.",
-      tech: ["XGBoost", "FastAPI", "React", "Vite", "Render", "Vercel"],
-      github: "https://github.com/17MaNN/WC26",
-    },
-    {
       title: "Rainbow Prediction Framework",
       tagline: "ATMOSPHERIC ML · RESEARCH · arXiv (in progress)",
       description:
         "1.49M NASA POWER atmospheric records, 26 physics-derived features, and an XGBoost/RF/LightGBM ensemble — co-built with Laveena Armarkar, targeting an arXiv physics.ao-ph submission.",
       tech: ["XGBoost", "LightGBM", "Random Forest", "Python", "NASA POWER"],
       github: "https://github.com/17MaNN",
-    },
-    {
-      title: "Medical AI Assistant",
-      tagline: "RAG · MACHINE LEARNING",
-      description:
-        "A Retrieval-Augmented Generation (RAG) application that answers medical queries using a domain-specific knowledge base, combining semantic search with locally hosted LLMs to deliver accurate and context-aware healthcare information.",
-      tech: ["Python","Ollama","LangChain","RAG","Vector Database","Embeddings","React","Tailwind CSS"],
-      website: "https://medsearchai.onrender.com/",
-      isWebsite: true,
+      image: "/images/project-rainbow.webp",
     },
     {
       title: "Hakkasan Mumbai",
@@ -117,29 +87,10 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-24 md:py-32 relative bg-background">
       <div className="container mx-auto px-6 lg:px-12">
-<<<<<<< HEAD
-        {/* Section Heading */}
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          <span className="text-small text-muted-foreground mb-4 block">
-            ✦ Selected Works
-          </span>
-          <div className="flex items-end gap-6">
-            <h2 className="text-section-heading">Featured Work</h2>
-            <span className="hidden md:block font-mono text-muted-foreground/40 text-2xl mb-2">
-              {"{ 08 }"}
-            </span>
-=======
         <ScrollReveal className="mb-16 flex items-end justify-between border-b border-border pb-8">
           <div>
             <span className="index-label mb-4 block">03 / SELECTED WORK</span>
             <h2 className="text-section-heading">Projects</h2>
->>>>>>> 45e590e (updating to v2)
           </div>
           <span className="hidden md:block font-mono text-muted-foreground/40 text-lg">
             {String(projects.length).padStart(2, "0")} total
