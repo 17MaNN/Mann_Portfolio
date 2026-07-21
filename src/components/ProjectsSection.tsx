@@ -19,14 +19,14 @@ const ProjectsSection = () => {
       title: "Credit Intelligence Copilot",
       tagline: "AGENTIC RAG • MULTI-SERVICE",
       description:
-        "Multi-service agentic RAG system for credit risk and collections ops — combines a PyTorch risk model, CV/OCR document analysis, a fine-tuned NLP intent classifier, and RAG-based policy retrieval, orchestrated by an LLM agent with tool-calling. Deployed via Docker and Kubernetes.",
+        "Multi-service agentic RAG system for credit risk and collections ops, combines a PyTorch risk model, CV/OCR document analysis, a fine-tuned NLP intent classifier, and RAG-based policy retrieval, orchestrated by an LLM agent with tool-calling. Deployed via Docker and Kubernetes.",
       tech: ["Python", "PyTorch", "Hugging Face", "FastAPI", "FAISS", "Docker", "Kubernetes", "AWS Bedrock", "Gemini"],
       github: "https://github.com/17MaNN/Credit-Intelligence-Copilot",
       website: "",
       isWebsite: false,
     },
     {
-      title: "WC26 — Match Prediction System",
+      title: "FIFA 26 : Match Prediction System",
       tagline: "XGBOOST · FASTAPI · REACT/VITE",
       description:
         "End-to-end FIFA World Cup 2026 prediction system: XGBoost modeling, a FastAPI backend, and a React/Vite frontend, deployed on Render and Vercel with live football-data.org integration.",
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
       title: "Rainbow Prediction Framework",
       tagline: "ATMOSPHERIC ML · RESEARCH · arXiv (in progress)",
       description:
-        "1.49M NASA POWER atmospheric records, 26 physics-derived features, and an XGBoost/RF/LightGBM ensemble — co-built with Laveena Armarkar, targeting an arXiv physics.ao-ph submission.",
+        "1.49M NASA POWER atmospheric records, 26 physics-derived features, and an XGBoost/RF/LightGBM ensemble, co-built with Laveena Armarkar, targeting an arXiv physics.ao-ph submission.",
       tech: ["XGBoost", "LightGBM", "Random Forest", "Python", "NASA POWER"],
       github: "https://github.com/17MaNN",
     },
